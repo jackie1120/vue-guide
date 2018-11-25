@@ -1,0 +1,12 @@
+.book-img {
+  width: 100%
+}
+.book-label {
+  /* display: inline-block; */
+  color: rgb(145, 144, 144);
+}
+.book-box {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
