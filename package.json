@@ -1,0 +1,22 @@
+{
+  "name": "vue-guide-test",
+  "version": "1.0.0",
+  "description": "Vue从入门到熟练——组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackie1120/vue-guide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackie1120/vue-guide/issues"
+  },
+  "homepage": "https://github.com/jackie1120/vue-guide#readme",
+  "dependencies": {
+    "vue": "^2.5.22"
+  }
+}
