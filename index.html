@@ -8,17 +8,18 @@
 </head>
 <body>
   <div id="app">
-    {{ message }}
+    {{ message }}{{ currentPage }}
     <div>
-      <page-button @change-page="changePage" :page=1>1</page-button>
-      <page-button @change-page="changePage" :page=2>2</page-button>
+      <page-info :current-page=currentPage></page-info>
+      <page-button @change-page="changePage" :page=1 :current-page="currentPage">1</page-button>
+      <page-button @change-page="changePage" :page=2 :current-page=currentPage>2</page-button>
     </div>
   </div>
 </body>
-<script src="./node_modules/vue/dist/vue.min.js"></script>
+<script src="./node_modules/vue/dist/vue.js"></script>
 <script>
   Vue.component('page-button', {
-    props:['page'],
+    props:['page', 'currentPage'],
     methods: {
       changePage: function(page) {
         console.log('compontent'+page)
@@ -27,15 +28,22 @@
     },
     template: '<button @click="changePage(page)"><slot></slot></button>'
   })
-  
+
   var vm = new Vue({
     el: '#app',
     data: {
-      message: 'Hello world'
+      message: 'Hello world',
+      currentPage: 2
     },
     methods: {
       changePage: function(page) {
         console.log(page)
+      }
+    },
+    components: {
+      'page-info': {
+        props: ['currentPage'],
+        template: '<span>当前第{{ currentPage }}页</span>'
       }
     }
   })
